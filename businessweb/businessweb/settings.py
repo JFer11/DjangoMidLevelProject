@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     'blog',
     'social',
     'pages',
+
+    'ckeditor',  # To have more tools in the edition of text in the AP, not a Django App (startapp)
 ]
 
 MIDDLEWARE = [
@@ -131,5 +133,6 @@ STATIC_URL = '/static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+# For media files
 MEDIA_ROOT = os.path.join(BASE_DIR, "media_folder")
 MEDIA_URL = "/media/"

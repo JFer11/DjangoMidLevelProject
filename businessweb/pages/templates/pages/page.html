@@ -15,7 +15,9 @@
               <span class="section-heading-lower">{{page.title}}</span>
             </h2>
             <div class="section-content">
-                <p>{{page.content|linebreaks}}</p>
+                <p>{{page.content|safe}}</p>
+                <!-- "safe" instead of "linebreaks" because now, "page.content" is a RichTextField from CKEditor, and
+                tries to inject HTML code here. So that, we have to specify that this HTML is "safe". -->
                 {% if user.is_authenticated %}
                 <p><a href="{% url 'admin:pages_page_change' page.id %}">Edit</a></p>
                 {% endif %}
