@@ -6,9 +6,10 @@ class Page(models.Model):
     content = models.TextField()
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
+    order = models.SmallIntegerField(default=0)
 
     class Meta:
-        ordering = ['title']
+        ordering = ['order', 'title']
 
     def __str__(self):
         return self.title
