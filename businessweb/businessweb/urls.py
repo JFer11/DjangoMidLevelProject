@@ -20,9 +20,11 @@ from businessweb import settings
 
 urlpatterns = [
     # Core Paths
-    path('core/', include('core.urls')),
+    path('', include('core.urls')),
     # Services Paths
     path('services/', include('services.urls')),
+    # Blog Paths
+    path('blog/', include('blog.urls')),
 
     # Admin Paths
     path('admin/', admin.site.urls),
