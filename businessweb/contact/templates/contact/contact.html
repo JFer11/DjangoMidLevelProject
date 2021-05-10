@@ -17,27 +17,31 @@
               <span class="section-heading-lower">Contacto</span>
             </h2>
             <!-- Formulario de contacto -->
-            <form>
+            {% if 'ok' in request.GET %}
+            <p><b> Mensaje enviado correctamente </b></p>
+            {% endif %}
+            <form action="" method="POST">
+                {% csrf_token %}
                 <div class="form-group">
                     <label>Nombre *</label>
                     <div class="input-group">
-                        <input type="text" class="form-control">
+                        {{form.name}} <!-- Generates a tag similar to this: <input type="text" class="form-control"> -->
                     </div>
+                    {{form.name.errors}}
                 </div>
                 <div class="form-group">
                     <label>Email *</label>
                     <div class="input-group">
-                        <input type="text" class="form-control">
+                        {{form.email}} <!-- Generates a tag similar to this: <input type="text" class="form-control"> -->
                     </div>
-                    <ul class="errorlist">
-                        <li>El email no es correcto.</li>
-                    </ul>
+                    {{form.email.errors}}
                 </div>
                 <div class="form-group">
                     <label>Mensaje *</label>
                     <div class="input-group">
-                        <textarea class="form-control"></textarea>
+                        {{form.content}} <!-- Generates a tag similar to this: <textarea class="form-control"></textarea> -->
                     </div>
+                    {{form.content.errors}}
                 </div>
                 <div class="text-center">
                     <input type="submit" class="btn btn-primary btn-block py-2" value="Enviar">

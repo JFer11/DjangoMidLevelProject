@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'blog',
     'social',
     'pages',
+    'contact',
 
     'ckeditor',  # To have more tools in the edition of text in the AP, not a Django App (startapp)
 ]
